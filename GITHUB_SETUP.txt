@@ -1,0 +1,204 @@
+# GitHub Update Instructions
+
+## Overview
+This document provides step-by-step instructions to update your GitHub repository with all project files and the comprehensive README.
+
+## Prerequisites
+- Git installed on your system
+- Access to your repo (credentials or SSH setup)
+- Files ready in: `C:\Users\Umar_\Desktop\Market Basket Analysis\`
+
+---
+
+## Step 1: Navigate to Your Project Directory
+
+Open PowerShell and run:
+```powershell
+cd "C:\Users\Umar_\Desktop\Market Basket Analysis"
+```
+
+---
+
+## Step 2: Initialize Git Repository (if not already done)
+
+If you don't have `.git` folder:
+```powershell
+git init
+```
+
+Then add remote:
+```powershell
+git remote add origin https://github.com/MUmarKhan02/Market-Basket-Analysis-Machine-Learning.git
+```
+
+If remote already exists, verify:
+```powershell
+git remote -v
+```
+
+---
+
+## Step 3: Stage All Files
+
+Add all files to staging:
+```powershell
+git add .
+```
+
+Or add specific files:
+```powershell
+git add processingkmeans.java
+git add processingnok.java
+git add processing.java
+git add README.md
+git add .gitignore
+git add scanner_data.csv
+git add "Sales Transaction v.4a.csv"
+```
+
+---
+
+## Step 4: Check Status
+
+Verify files are staged:
+```powershell
+git status
+```
+
+Expected output shows:
+```
+On branch main
+Changes to be committed:
+  new file:   processingkmeans.java
+  new file:   processingnok.java
+  new file:   processing.java
+  new file:   README.md
+  ...
+```
+
+---
+
+## Step 5: Commit Changes
+
+```powershell
+git commit -m "Add project files with detailed README
+
+- processingkmeans.java: Main implementation (ACTIVE)
+- processingnok.java: Lightweight Apriori-only variant
+- processing.java: Original outdated version (reference)
+- Complete project documentation with algorithm explanations
+- Added .gitignore for Java projects"
+```
+
+---
+
+## Step 6: Push to GitHub
+
+```powershell
+git push -u origin main
+```
+
+**Note:** If your default branch is `master` instead of `main`:
+```powershell
+git push -u origin master
+```
+
+---
+
+## Step 7: Verify Upload
+
+Visit your repo: https://github.com/MUmarKhan02/Market-Basket-Analysis-Machine-Learning
+
+Check that all files are there and README displays correctly.
+
+---
+
+## Common Issues & Solutions
+
+### Issue: Authentication Failed
+**Solution:** Use personal access token instead of password
+1. Create token at: https://github.com/settings/tokens
+2. Clone/push using: `https://[username]:[TOKEN]@github.com/MUmarKhan02/...`
+
+### Issue: Remote Rejected Push
+**Solution:** Pull first to sync
+```powershell
+git pull origin main
+git push origin main
+```
+
+### Issue: Wrong Branch
+**Solution:** Check current branch
+```powershell
+git branch
+```
+Switch if needed:
+```powershell
+git checkout main
+```
+
+### Issue: LFS File Size
+**Solution:** If files are too large, use Git LFS
+```powershell
+git lfs install
+git lfs track "*.csv"
+git add .gitattributes
+git commit -m "Add Git LFS tracking"
+git push
+```
+
+---
+
+## File Organization on GitHub
+
+Your repo should have this structure:
+
+```
+Market-Basket-Analysis-Machine-Learning/
+├── README.md                          ← Main documentation
+├── processingkmeans.java              ← ACTIVE FILE (use this)
+├── processingnok.java                 ← Alternative lightweight version
+├── processing.java                    ← OUTDATED (reference only)
+├── scanner_data.csv                   ← Sample data
+├── Sales Transaction v.4a.csv         ← Alternative data
+├── .gitignore                         ← Git ignore rules
+└── [runtime files - not pushed]
+    ├── transac.txt
+    └── filename2.txt
+```
+
+---
+
+## Useful Git Commands
+
+View commit history:
+```powershell
+git log --oneline
+```
+
+Undo last commit (before push):
+```powershell
+git reset --soft HEAD~1
+```
+
+Check what changed:
+```powershell
+git diff
+```
+
+---
+
+## Future Updates
+
+To update files in future:
+```powershell
+cd "C:\Users\Umar_\Desktop\Market Basket Analysis"
+git add [modified files]
+git commit -m "Update: [description of changes]"
+git push origin main
+```
+
+---
+
+That's it! Your repository will be fully updated with all files and documentation.
+

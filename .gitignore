@@ -1,0 +1,27 @@
+# Java compiled files
+*.class
+*.jar
+*.war
+*.rar
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build output
+target/
+bin/
+
+# Runtime generated files
+transac.txt
+filename2.txt
+
+# System files
+Thumbs.db
+.classpath
+.project
+

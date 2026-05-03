@@ -203,30 +203,8 @@ Itemset: [Item_C, Item_D, Item_E] - Support: 32
 4. **Normalize Data** → 5. **Apply K-means** → 6. **Evaluate Clusters** → 
 7. **Filter Transactions** → 8. **Run Apriori** → 9. **Output Results**
 
----
 
-## Future Improvements
 
-- [ ] Add GUI parameter adjustment without recompilation
-- [ ] Support different distance metrics (Manhattan, Cosine)
-- [ ] Implement hierarchical clustering as alternative
-- [ ] Add confidence and lift metrics for association rules
-- [ ] Interactive visualization with zoom/pan functionality
-- [ ] Support for real-time data streams
-- [ ] Performance optimization for larger datasets (>1M transactions)
-
----
-
-## Requirements Met
-
-✅ Transaction clustering and segmentation  
-✅ Frequent itemset discovery  
-✅ Association rule mining  
-✅ Cluster quality evaluation  
-✅ Data visualization  
-✅ Scalable architecture  
-
----
 
 ## License
 

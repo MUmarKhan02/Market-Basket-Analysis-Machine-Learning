@@ -9,26 +9,11 @@ This project implements a **Market Basket Analysis system** that combines K-mean
 - **Apriori Algorithm**: Discovers frequent itemsets and association rules from transactions
 - **Dunn Index Calculation**: Evaluates cluster quality to determine optimal number of clusters
 - **Elbow Method**: Uses inertia analysis to identify the optimal number of clusters
-- **Data Visualization**: GUI-based visualization of clusters in 2D space with color-coded points
-- **Transaction Processing**: Filters and processes transaction data based on clustering results
 
-## Project Structure
-
-```
-Market Basket Analysis/
-├── processingkmeans.java      # Main implementation (ACTIVE - Use this)
-├── processingnok.java         # Simplified variant (lightweight version)
-├── processing.java            # Original version (OUTDATED - Reference only)
-├── scanner_data.csv           # Sample transaction dataset
-├── Sales Transaction v.4a.csv # Alternative transaction dataset
-├── transac.txt                # Generated transaction file (runtime)
-├── filename2.txt              # Generated itemsets output (runtime)
-└── README.md                  # This file
-```
 
 ## File Descriptions
 
-### processingkmeans.java ⭐ **RECOMMENDED**
+### processingkmeans.java **RECOMMENDED**
 The main and most polished version of the project.
 
 **Functionality:**
@@ -42,13 +27,6 @@ The main and most polished version of the project.
 - Generates GUI visualization showing clustered data points with color coding
 - Outputs frequent itemsets to file
 
-**Main Components:**
-- `processTransactions()`: Reads and parses CSV data
-- `algo()`: K-means clustering algorithm
-- `findDunnIndex()`: Cluster quality metric calculation
-- `apriori()`: Frequent itemset mining
-- `paintComponent()`: 2D GUI visualization
-- Output: `transac.txt` (transactions) and frequent itemsets in console
 
 ### processingnok.java 
 A simplified, lightweight version focusing only on core Apriori functionality.
@@ -127,11 +105,6 @@ Identifies optimal clusters by finding the "elbow" point where:
    java processingkmeans
    ```
 
-3. **Expected Output:**
-   - Console: Cluster analysis results, inertia values, Dunn Index scores
-   - `transac.txt`: Filtered transactions used for Apriori
-   - `filename2.txt`: Frequent itemsets with support counts
-   - GUI Window: 2D visualization with color-coded cluster assignments
 
 ### Input Data Format
 CSV file with columns: `[TransactionID, Item, Price, Quantity, Date, ...]`
@@ -170,26 +143,10 @@ elbow: 4
 5 0.923
 ```
 
-**Dunn Index values:** Higher is better (0.5-1.0 is typical)
 
-### filename2.txt Output
-```
-Itemset: [Item_A, Item_B] - Support: 45
-Itemset: [Item_C, Item_D, Item_E] - Support: 32
-...
-```
-
-**Support:** Number of transactions containing the itemset
 
 ---
 
-## Project Team & Contributions
-
-- **Apriori Algorithm & Dunn Index:** Implemented core machine learning algorithms
-- **K-means Clustering & Visualization:** Implemented clustering and GUI components
-- **Code Organization & Refinement:** Final project structure and optimization
-
----
 
 ## Technical Details
 
@@ -202,16 +159,4 @@ Itemset: [Item_C, Item_D, Item_E] - Support: 32
 1. **Read CSV** → 2. **Parse Transactions** → 3. **Aggregate Items** → 
 4. **Normalize Data** → 5. **Apply K-means** → 6. **Evaluate Clusters** → 
 7. **Filter Transactions** → 8. **Run Apriori** → 9. **Output Results**
-
-
-
-
-## License
-
-This project is provided as-is for educational purposes.
-
----
-
-**Last Updated:** May 2026  
-**Status:** Complete - Project Submission Version
 
